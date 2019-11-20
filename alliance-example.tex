@@ -1,0 +1,105 @@
+%% -----------------------------------------------------
+%% Sample NSERC Alliance proposal template
+%%
+%% - Declare the document as "nserc-alliance",
+%%   and specify whether the document is in French or English.
+%% - Optionally, you can use the argument "nobullets" to hide all
+%%   the instructions under each section title, and leave only
+%%   your text.
+%% -----------------------------------------------------
+\documentclass[french]{nserc-alliance}
+
+%% --------------------------
+%% Inclusion of a basic configuration file. Go see this file: there are
+%% parameters (such as your name, etc.) to fill in. This avoids repeating
+%% the same info in the case you produce multiple documents for the same
+%% application.
+%% --------------------------
+\input{application-config.tex}
+
+%% ----------
+%% Set the title of the document in the PDF's metadata
+%% ----------
+\hypersetup{%
+  pdftitle = {NSERC Alliance Template}
+}
+
+\begin{document}
+\thispagestyle{firstpage}
+\maketitle
+
+%% -------------------------------
+%% Background and Expected Outcomes
+%% -------------------------------
+\section*{Background and Expected Outcomes}
+\ifinst\begin{instructions}
+\item Outline the goals of the partnership and explain the potential outcomes and impacts.
+\item Describe the importance of the topic to Canada and how the expected outcomes will benefit Canada.
+\item Explain the new concepts or directions needed to address the topic and how this research will fill knowledge gaps related to developing new and innovative policies, standards, products, services, processes or technologies in Canada. Position the proposed project relative to other efforts by the researchers and partner organizations and to any related research.
+\item Outline efforts the partner organizations will invest following the project’s completion to advance the results in Canada.
+\end{instructions}\fi
+
+\noindent From here on, write your text as usual, using sections, subsections, etc. You can also use references \cite{DBLPjournals/jsyml/Turing48,DBLPconf/afips/SolomonP76}.
+
+Nunc bibendum lorem in ligula malesuada mattis. Quisque quis fermentum neque, vitae venenatis ante. Etiam et iaculis nibh. Curabitur fringilla lobortis rhoncus. Vestibulum tristique nulla ac mi molestie congue. Nullam auctor laoreet orci a lobortis. Aenean convallis lacus a laoreet viverra.
+
+Quisque ullamcorper tristique varius. Pellentesque nec est sed diam gravida vulputate non at ex. Donec rhoncus ligula purus, non vestibulum lorem hendrerit nec. Quisque sagittis nulla ac velit pulvinar laoreet. Nam viverra sodales mauris a sodales. Quisque vitae dignissim nibh. Suspendisse pulvinar lacus at consequat commodo. Praesent rhoncus, nibh quis porta dignissim, nisl tellus vestibulum felis, eu rutrum mauris magna consequat quam. Proin sagittis eleifend velit sit amet placerat.
+
+%% -------------------------------
+%% Partnership
+%% -------------------------------
+\section*{Partnership}
+\ifinst\begin{instructions}
+\item List all partner organizations expected to play a key role in the activities or to make cash and/or in-kind contributions.
+\item Describe the core activity of the partner organizations and their experience related to the research project, such as any efforts to date that the partner organizations has invested toward addressing this problem, the need for this research project and how the topic is relevant and aligned with the partner organizations’ activities.
+\item Explain how each partner organization will be actively involved (through cash and/or in-kind contributions) to co-designing and implementing the research program. Describe the value added through in-kind contributions and how these are important to realizing the project’s intended outcomes.
+\item Outline each partner organization’s strategy and capacity to translate the research results into practical application to achieve the desired outcomes and impacts, including any planned knowledge translation activities and integration of the research results into its operations.
+\end{instructions}\fi
+
+
+%% -------------------------------
+%% Proposal
+%% -------------------------------
+\section*{Proposal}
+\ifinst\begin{instructions}
+\item Outline the research objectives. Detail the resources and activities needed to achieve the anticipated results.
+\item Indicate approximate timelines for the activities to lead to milestones and deliverables using a Gantt chart, table or diagram.
+\item Explain how equity, diversity and inclusion have been considered in the research design.
+\item Identify the indicators and methods for monitoring progress during the project and for assessing the outcomes. You may include a chart or table.
+\end{instructions}\fi
+
+%% -------------------------------
+%% Team
+%% -------------------------------
+\section*{Team}
+\ifinst\begin{instructions}
+\item List the applicant, any co-applicants and key staff of the partner organizations.
+\item Explain how the knowledge, experience and achievements of these individuals provide the expertise needed to accomplish the project objectives. Discuss the role of each individual and how their contributions, including those of staff from the partner organizations, will be integrated into the project.
+\item Explain how equity, diversity and inclusion have been considered in the academic team composition.
+\item For large or multi-party projects (multiple universities and/or partner organizations), it may be appropriate to provide a description of up to three additional pages detailing university support, governance structure and project management. If applicable, please detail the project manager’s qualifications, involvement, role and responsibilities.
+\end{instructions}\fi
+
+\section*{Training Plan}
+\ifinst\begin{instructions}
+\item Indicate how the knowledge and experience gained by research trainees and the partners’ staff members are relevant to the advancement of the field, to applying knowledge or to strengthening the partners’ sectors.
+\item Describe how the project and the partnership offer opportunities for enriched training experiences that will allow research trainees (undergraduates, graduates and postdoctoral fellows) to develop relevant technical skills as well as professional skills, such as leadership, communication, collaboration and entrepreneurship. Include the nature of the planned interactions with the partners and other relevant activities.
+\item Explain how equity, diversity and inclusion are considered in the training plan.
+\end{instructions}\fi
+
+%% -------------------------------
+%% References
+%% -------------------------------
+\newpage
+\begingroup
+\section*{References}
+\renewcommand{\section}[2]{}%
+\ifinst\begin{instructions}
+\item Use this section to provide a list of the most relevant literature references. Do not refer readers to websites for additional information on your proposal. Do not introduce hyperlinks in your list of references.
+\item These pages are not included in the page count.
+\end{instructions}\fi
+\bibliographystyle{abbrv}
+\bibliography{alliance-example}
+\endgroup
+
+\end{document}
+%% :wrap=soft:folding=explicit:

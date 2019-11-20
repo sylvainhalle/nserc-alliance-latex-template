@@ -1,0 +1,14 @@
+*.aux
+*.pdf
+!logo*.pdf
+*.log
+*.bbl
+*.blg
+*.tmp
+*.bak
+*.out
+*~
+\#*
+*\#
+.DS_Store
+comment.cut
