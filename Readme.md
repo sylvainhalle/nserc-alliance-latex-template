@@ -13,6 +13,10 @@ should be self-explanatory.
 Note that I made up this class for my own personal use; I don't
 mind sharing it, but please don't contact me for support.
 
+If you are writing an NSERC Discovery Grant, you might want to have a look
+at this [other template](https://github.com/sylvainhalle/nserc-latex-template)
+I made.
+
 Usage notes
 -----------
 
