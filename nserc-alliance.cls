@@ -33,10 +33,12 @@
 \def\@langdemande{english}
 \def\@inlinerefs{false}
 \def\@instbullets{true}
+\def\@pdfFourteen{false}
 \DeclareOption{french}{\def\@langdemande{french}}
 \DeclareOption{english}{\def\@langdemande{english}}
 \DeclareOption{inlinerefs}{\def\@inlinerefs{true}}
 \DeclareOption{nobullets}{\def\@instbullets{false}}
+\DeclareOption{pdf14}{\def\@pdfFourteen{true}}
 \DeclareOption*{%
   \PassOptionsToClass{\CurrentOption}{book}%
 }
@@ -67,8 +69,18 @@
 \RequirePackage{comment}              %% Comment out parts of the text
 \RequirePackage{xcolor}               %% To gray out the instructions
 
-
-
+%% ------------------------
+%% Experimental: since the template uses only Times and Helvetica,
+%% and these are two of the PDF standard's 14 embedded fonts, the
+%% "pdf14" option can instruct LaTeX not to embed any font in the PDF.
+%% This results in a PDF that is really small: around 17 kb, compared to
+%% 237 kb for the identical Word document (if you care). Don't use this
+%% option if it causes display problems for you.
+%% ------------------------
+\ifthenelse{\equal{\@pdfFourteen}{true}}{
+  \pdfmapfile{pdftex_ndl14.map}
+}{%
+}
 
 %% ------------------------
 %% Prevents heading and single lines to be split across pages
@@ -129,8 +141,6 @@
 \renewcommand{\footrulewidth}{0pt}
 \renewcommand{\headrulewidth}{0pt}
 \pagestyle{plain}
-%% On redéfinit le style plain pour ne pas avoir de numéros de page
-%% à la première page des chapitres
 \fancypagestyle{plain}{%
 \fancyhf{} % clear all header and footer fields
 \fancyhead[R]{{\color{white}$\oplus$}~\@nname~$\cdot$~\@npin}
@@ -167,7 +177,7 @@
 \thispagestyle{firstpage}
 \noindent\pushright\usebox{\nserclogo}
 \ifthenelse{\equal{\@langdemande}{english}}%
-{%English
+{% English
 \vskip 2in
 \noindent{\fontsize{16}{24}\selectfont\pushright\textsf{\textbf{Alliance grants}}}
 \vskip 0.207cm
@@ -201,11 +211,5 @@
 \newgeometry{hmargin={0.75in,0.75in},vmargin={0.5in,0.5in},headheight=0.3in,includehead,includefoot,heightrounded}
 \pagestyle{plain}
 }
-%\newpage
-
-%% -------------------------------
-%% Option to hide instruction bullets
-%% -------------------------------
-
 
 %% :mode=latex:wrap=none:
