@@ -255,7 +255,7 @@
   \item Ne modifiez ni le texte (libellés de rubrique et puces) du gabarit ni la présentation (police et taille des caractères, marges et interligne).
   \item Vous pouvez aussi insérer des figures et des tableaux; utilisez une police et une taille de caractères qui facilitent la lecture.
   \item Ne joignez pas la présente page couverture.
-  \item Pour vous assurer que votre demande est complète, consultez la Liste de vérification pour les demandes de subvention Alliance.
+  \item Pour vous assurer que votre demande est complète, consultez la \href{https://www.nserc-crsng.gc.ca/_doc/alliance/ApplicationChecklist_f.pdf}{Liste de vérification pour les demandes de subvention Alliance}.
 \end{worditemize}
 
 
