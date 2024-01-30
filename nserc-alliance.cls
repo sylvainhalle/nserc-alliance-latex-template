@@ -97,6 +97,8 @@
   \setlength{\parskip}{8pt}
   \setlength{\parindent}{0pt}
   \RequirePackage[french]{babel}
+  % use english-style bullets
+  \AtBeginDocument{\def\labelitemi{\textbullet}}
 }{%
   \setlength{\parskip}{0pt}
   \RequirePackage[english]{babel}
@@ -109,7 +111,7 @@
 \newif\ifinst
 \newenvironment{instructions}{
   \nointerlineskip
-  \begin{list}{\labelitemi}{\leftmargin=1em \itemindent=0em}
+  \begin{list}{\textbullet}{\leftmargin=1em \itemindent=0em}
   \setlength{\itemsep}{1pt}
   \setlength{\parskip}{0pt}
   \setlength{\parsep}{0pt}
@@ -227,27 +229,39 @@
 
 \end{worditemize}
 }
-    
-    
-    
 }%
 {% French
-\vskip 2in
+\vskip 1in
 \noindent{\fontsize{16}{24}\selectfont\pushright\textsf{\textbf{Subventions Alliance}}}
 \vskip 0.207cm
 \noindent{\hspace{-2pt}\fontsize{26}{30}\selectfont\pushright\textsf{\textbf{Gabarit de la proposition}}}
-\vskip 4.60in
+\vskip 1in
 \noindent{\fontsize{14}{24}\selectfont\pushright\textsf{\textbf{Instructions générales:}}}\\
+\noindent
 
-{\noindent
-{\fontsize{10}{10}\selectfont
-\pushright\textsf{Insérez vos réponses dans les sections \og{}INSÉREZ ICI VOTRE TEXTE\fg{} en prenant soin de respecter le}\\
-\pushright\textsf{nombre de pages suggéré (tel qu’il est indiqué dans les instructions du Système en ligne) pour chacune}\\
-\pushright\textsf{des rubriques. Ne modifiez ni le texte du gabarit ni les marges. Vous pouvez aussi insérer des figures et}\\
-\pushright\textsf{des tableaux.}\\
+{\fontsize{11}{11}\selectfont
+\sffamily
+\begin{worditemize}
+  \item Le gabarit présenté dans les pages ci-après indique les rubriques des différentes sections de la proposition et, pour chaque rubrique, une série de puces précisant l'information à fournir dans la section correspondante. Remplissez le gabarit de la proposition en traitant, dans les sections Insérez ici vos réponses\ldots, de chacun des éléments mentionnés dans les listes à puces.
+
+  \begin{itemize}
+    \item Le nombre de pages suggéré pour chaque section est indiqué dans \href{https://www.nserc-crsng.gc.ca/OnlineServices-ServicesEnLigne/instructions/101/alliance_fra.asp\#proposition}{les instructions relatives à la présentation des demandes}. Votre proposition ne doit pas dépasser le nombre maximum de pages mentionné dans ces instructions.
+    \item Pour en savoir plus sur la prise en compte des questions d'équité, de diversité et d'inclusion (EDI) dans la recherche, la composition de l'équipe et le plan de formation, reportez-vous à la page Web \href{https://www.nserc-crsng.gc.ca/Innovate-Innover/alliance-alliance/EDI_training-EDI_formation_fra.asp}{Intégrer les principes d'équité, de diversité et d'inclusion au plan de formation} et au \href{https://www.nserc-crsng.gc.ca/NSERC-CRSNG/Policies-Politiques/EDI_guidance-Conseils_EDI_fra.asp\#a1}{Guide du CRSNG pour la prise en compte des considérations en matière d'équité, de diversité et d'inclusion dans la recherche}.
+    \item Le mérite de votre demande sera évalué en fonction des \href{https://www.nserc-crsng.gc.ca/innovate-innover/alliance-alliance/apply-presentez_votre_demande_fra.asp}{critères d'évaluation} des demandes de subvention Alliance et des \href{https://www.nserc-crsng.gc.ca/_doc/alliance/Merit_Indicators-Alliance_Grants2_f.pdf}{indicateurs de mérite connexes}. Si des évaluatrices et évaluateurs externes participent à l'évaluation de votre demande, ils pourront s'appuyer sur les \href{https://www.nserc-crsng.gc.ca/Innovate-Innover/alliance-alliance/instructions_external_reviewers-instructions_evaluatrices_evaluateurs_externes_fra.asp}{Instructions aux évaluateurs externes}.
+
+  \end{itemize}
+  \item Ne remplissez la section Proposition de valeur concernant les retombées publiques (à la dernière page) que si vous demandez une subvention Société du programme Alliance. Utilisez au plus trois pages, ce qui inclut le texte du gabarit. (Pour connaitre les exigences concernant les subventions Société, consultez la page \href{https://www.nserc-crsng.gc.ca/Innovate-Innover/alliance_society-alliance_societe/research_topics-sujets_de_recherche_fra.asp}{Subventions Société du programme Alliance – Sujets de recherche}). Seul le comité d'évaluation des propositions de valeur concernant les retombées publiques prendra connaissance de cette section. Si votre demande est retenue pour l'étape suivante de l'évaluation, les évaluatrices et évaluateurs externes n'y auront pas accès. Assurez-vous que les autres sections de votre demande contiennent toute l'information se rapportant aux critères d'évaluation des demandes de subvention Alliance.
+  \item Pour toutes les autres demandes, supprimez la section Proposition de valeur concernant les retombées publiques. 
+  \item Ne modifiez ni le texte (libellés de rubrique et puces) du gabarit ni la présentation (police et taille des caractères, marges et interligne).
+  \item Vous pouvez aussi insérer des figures et des tableaux; utilisez une police et une taille de caractères qui facilitent la lecture.
+  \item Ne joignez pas la présente page couverture.
+  \item Pour vous assurer que votre demande est complète, consultez la Liste de vérification pour les demandes de subvention Alliance.
+\end{worditemize}
+
+
 }
 }
-}
+
 \end{titlepage}
 \newgeometry{hmargin={0.75in,0.75in},vmargin={0.5in,0.5in},headheight=0.3in,includehead,includefoot,heightrounded}
 \pagestyle{plain}
