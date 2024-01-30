@@ -143,9 +143,9 @@
 %% ------------------------
 \newsavebox{\nserclogo}
 \ifthenelse{\equal{\@langdemande}{french}}{%
-\savebox{\nserclogo}{\includegraphics[width=2.46cm]{logo-fr}}
+\savebox{\nserclogo}{\includegraphics[width=2.46cm]{CRSNG.png}}
 }{%
-\savebox{\nserclogo}{\includegraphics[width=2.46cm]{logo-en}}
+\savebox{\nserclogo}{\includegraphics[width=2.46cm]{NSERC.png}}
 }
 
 %% ------------------------
