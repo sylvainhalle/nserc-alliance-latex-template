@@ -1,6 +1,7 @@
 %% --------------------------------------
 %% NSERC Alliance template class
 %% (C) 2019 Sylvain Hallé
+%% modified by C. Fuhrman (2024) for 2023 Alliance template
 %%
 %% This work may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either version 1.3
@@ -18,6 +19,7 @@
 %% -----------
 %% For instructions on how to use this class, see the file alliance-example.tex
 %% provided with this package. Most of its content is self-explanatory.
+%% Christopher Fuhrman updated this class based on the Word template at https://www.nserc-crsng.gc.ca/_doc/alliance/Proposal_Template-Alliance_Grants2_e.docx (accessed 2024-01-30)
 %% --------------------------------------
 
 %% ------------------------
@@ -25,7 +27,7 @@
 %% ------------------------
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{nserc-alliance}
-              [2019/11/20 v1.0 Classe Alliance CRSNG par Sylvain Hallé]
+              [2024/01/30 v1.1 Classe Alliance CRSNG par Sylvain Hallé actualisée par Christopher Fuhrman]
 
 %% ------------------------
 %% Document class options and initialization
@@ -46,7 +48,7 @@
 \ifx\pdfoutput\undefined
   \LoadClass[letterpaper,onecolumn,dvips,12pt]{article}
 \else
-  \LoadClass[letterpaper,onecolumn,pdftex,12pt]{article}
+  \LoadClass[letterpaper,onecolumn,12pt]{article}
 \fi
 
 %% ------------------------
@@ -105,11 +107,29 @@
 %% ------------------------
 \definecolor{instructioncl}{gray}{0}
 \newif\ifinst
-\newenvironment{instructions}{\begin{itemize}\raggedright\color{instructioncl}}{\end{itemize}}
+\newenvironment{instructions}{
+  \nointerlineskip
+  \begin{list}{\labelitemi}{\leftmargin=1em \itemindent=0em}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+  \raggedright\color{instructioncl}}{\end{list}}
 \ifthenelse{\equal{\@instbullets}{true}}{%
   \insttrue
 }{%
   \instfalse
+}
+
+%% ------------------------
+%% Microsoft Word-like bullets
+%% ------------------------
+\newenvironment{worditemize}{
+  \begin{itemize}
+  \renewcommand{\labelitemii}{\labelitemi}
+  \renewcommand{\labelitemiii}{\labelitemi}
+  \renewcommand{\labelitemiv}{\labelitemi}
+}{
+  \end{itemize}
 }
 
 %% ------------------------
@@ -136,15 +156,14 @@
 %% ------------------------
 %% Page style
 %% ------------------------
-\fancyhead[LO,RE]{}
-\fancyhead[RO,LE]{}
+\fancyhead[L,R]{}
 \renewcommand{\footrulewidth}{0pt}
 \renewcommand{\headrulewidth}{0pt}
 \pagestyle{plain}
 \fancypagestyle{plain}{%
 \fancyhf{} % clear all header and footer fields
-\fancyhead[R]{{\color{white}$\oplus$}~\@nname~$\cdot$~\@npin}
-\fancyfoot[R]{\thepage}
+\fancyhead[R]{{\color{white}$\oplus$}\color{gray}{~\@nname~$\cdot$~\@npin}}
+\fancyfoot[R]{\color{gray}\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 }
@@ -166,9 +185,9 @@
 \fancypagestyle{firstpage}{%
 \fancyhf{} % clear all header and footer fields
 \ifthenelse{\equal{\@langdemande}{english}}{%
-  \fancyfoot[L]{\fontsize{9}{9}\selectfont\pushright\textsf{\color{gray}{Date modified: September 18, 2019  |  Ce formulaire est disponible en français}}}
+  \fancyfoot[L]{\fontsize{9}{9}\selectfont\pushright\textsf{\color{gray}{Date modified: December 2023  |  \emph{Ce formulaire est disponible en français}}}}
 }{%
-  \fancyfoot[L]{\fontsize{9}{9}\selectfont\pushright\textsf{\color{gray}{Date de modification: 18 septembre 2019  |  This form is available in English}}}
+  \fancyfoot[L]{\fontsize{9}{9}\selectfont\pushright\textsf{\color{gray}{Date de modification: Décembre 2023  |  \emph{This form is available in English}}}}
 }
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}}
@@ -178,17 +197,39 @@
 \noindent\pushright\usebox{\nserclogo}
 \ifthenelse{\equal{\@langdemande}{english}}%
 {% English
-\vskip 2in
+\vskip 1in
 \noindent{\fontsize{16}{24}\selectfont\pushright\textsf{\textbf{Alliance grants}}}
 \vskip 0.207cm
 \noindent{\hspace{-2pt}\fontsize{26}{30}\selectfont\pushright\textsf{\textbf{Proposal template}}}
-\vskip 5in
-\noindent{\fontsize{14}{24}\selectfont\pushright\textsf{\textbf{General instructions:}}}\\
+\vskip 1in
+\noindent{\fontsize{14}{24}\selectfont\pushright\textsf{\textbf{General instructions}}}\\
 \noindent
-{\fontsize{10}{10}\selectfont
-\pushright\textsf{Provide responses under INSERT YOUR TEXT using the suggested number of pages per section}\\
-\pushright\textsf{(as per the NSERC online system instructions), and without altering the template text or margins.}\\
-\pushright\textsf{Figures and tables are welcome.}}
+
+{\fontsize{11}{11}\selectfont
+\sffamily
+\begin{worditemize}
+% \def\labelenumi{\arabic{enumi}.}
+\item The following template provides the proposal's section headings, each with bullet points that specify the information that must be provided in that section. Complete the proposal by entering text that addresses the bullet points in place of ``Insert your text here\ldots'' in each section.
+
+  \begin{itemize}
+    \item	A suggested number of pages for each section is provided in the \href{https://www.nserc-crsng.gc.ca/OnlineServices-ServicesEnLigne/instructions/101/alliance_eng.asp\#proposal}{Instructions for completing an application}. The total length of your proposal must not exceed the maximum page limit specified in the \href{https://www.nserc-crsng.gc.ca/OnlineServices-ServicesEnLigne/instructions/101/alliance_eng.asp\#proposal}{Instructions for completing an application}.
+    \item When addressing consideration of equity, diversity and inclusion (EDI) in the research, the team composition and the training plan, refer to the \href{https://www.nserc-crsng.gc.ca/Innovate-Innover/alliance-alliance/EDI_training-EDI_formation_eng.asp}{Equity, diversity and inclusion in your training plan} web page and the \href{https://www.nserc-crsng.gc.ca/NSERC-CRSNG/Policies-Politiques/EDI_guidance-Conseils_EDI_eng.asp\#a1}{NSERC guide on integrating equity, diversity and inclusion considerations in research} for guidance.
+    \item The merit of your application will be assessed using the Alliance \href{https://www.nserc-crsng.gc.ca/Innovate-Innover/alliance-alliance/instructions_external_reviewers-instructions_evaluatrices_evaluateurs_externes_eng.asp}{evaluation criteria} and the related \href{https://www.nserc-crsng.gc.ca/Innovate-Innover/alliance-alliance/instructions_external_reviewers-instructions_evaluatrices_evaluateurs_externes_eng.asp}{merit indicators}. If the assessment process includes external reviewers, they will be guided by the \href{https://www.nserc-crsng.gc.ca/Innovate-Innover/alliance-alliance/instructions_external_reviewers-instructions_evaluatrices_evaluateurs_externes_eng.asp}{Instructions for external reviewers}.
+  \end{itemize}
+
+\item For Alliance Society proposals only, complete the Public impact value proposition section (on the last page) using a maximum of three pages, including the template text. (For required characteristics of Alliance Society grants see \href{https://www.nserc-crsng.gc.ca/Innovate-Innover/alliance_society-alliance_societe/research_topics-sujets_de_recherche_eng.asp}{Alliance Society Research Topics}). This section will be shared only with the Public Impact Value Proposition Selection Committee. If your application is selected for the subsequent assessment step, external reviewers will not have access to this section. Make sure the rest of your application contains all the information that is relevant to the Alliance evaluation criteria.
+  
+\item For all other applications, delete the Public impact value proposition section.
+\item Do not alter or remove template text (headings and bullet points) or modify the presentation format (font type and size, margins and line spacing).
+\item Figures and tables are welcome; use a font type and size that are clearly legible.
+\item Do not submit this cover page.
+\item Consult the \href{https://www.nserc-crsng.gc.ca/_doc/alliance/ApplicationChecklist_e.pdf}{Alliance grant application checklist} to ensure your application is complete. 
+
+\end{worditemize}
+}
+    
+    
+    
 }%
 {% French
 \vskip 2in
