@@ -9,7 +9,9 @@
 %% - The pdf14 option can reduce PDF file size by not embedding
 %%   standard fonts.
 %% -----------------------------------------------------
-\documentclass[english]{nserc-alliance}
+\documentclass[french,
+% nobullets, % uncomment to hide instructions
+]{nserc-alliance}
 
 %% --------------------------
 %% Inclusion of a basic configuration file. Go see this file: there are
@@ -19,16 +21,21 @@
 %% --------------------------
 \input{application-config.tex}
 
+%% Title for the proposal
+\newcommand{\proposaltitle}{Super cool project title}
+
 %% ----------
 %% Set the title of the document in the PDF's metadata
 %% ----------
 \hypersetup{%
-  pdftitle = {NSERC Alliance Template}
+  pdftitle = {\proposaltitle{}}
 }
 
 \begin{document}
 \thispagestyle{firstpage}
 \maketitle
+
+\noindent \textbf{Title: \proposaltitle}
 
 %% -------------------------------
 %% Background
@@ -113,8 +120,8 @@ You can also use references \cite{DBLPjournals/jsyml/Turing48,DBLPconf/afips/Sol
 \section*{References}
 \renewcommand{\section}[2]{}%
 \ifinst\begin{instructions}
-\item Use this section to provide a list of the most relevant literature references. Do not refer readers to websites for additional information on your proposal. Do not introduce hyperlinks in your list of references.
-\item These pages are not included in the page count.
+  \item Use this section to provide a list of the most relevant literature references. Do not refer readers to websites for additional information on your proposal. Do not introduce hyperlinks in your list of references.
+  \item These pages are not included in the page count.
 \end{instructions}\fi
 \bibliographystyle{abbrv}
 \bibliography{alliance-example}
