@@ -27,7 +27,7 @@
 %% ------------------------
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{nserc-alliance}
-              [2024/01/30 v1.1 Classe Alliance CRSNG par Sylvain Hallé actualisée par Christopher Fuhrman]
+              [2024/02/08 v1.1.1 Classe Alliance CRSNG par Sylvain Hallé actualisée par Christopher Fuhrman]
 
 %% ------------------------
 %% Document class options and initialization
@@ -145,9 +145,9 @@
 %% ------------------------
 \newsavebox{\nserclogo}
 \ifthenelse{\equal{\@langdemande}{french}}{%
-\savebox{\nserclogo}{\includegraphics[width=2.46cm]{CRSNG.png}}
+\savebox{\nserclogo}{\includegraphics[width=2.46cm]{CRSNG}}
 }{%
-\savebox{\nserclogo}{\includegraphics[width=2.46cm]{NSERC.png}}
+\savebox{\nserclogo}{\includegraphics[width=2.46cm]{NSERC}}
 }
 
 %% ------------------------

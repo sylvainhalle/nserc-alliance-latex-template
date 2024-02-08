@@ -1,6 +1,7 @@
 *.aux
 *.pdf
-!logo*.pdf
+!CRSNG.pdf
+!NSERC.pdf
 *.log
 *.bbl
 *.blg
